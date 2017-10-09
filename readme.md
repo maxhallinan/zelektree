@@ -4,7 +4,7 @@
 
 *Work in progress*
 
-Embed selectors in a Redux state tree.
+Embed selectors in the Redux state tree.
 
 
 ## Install
