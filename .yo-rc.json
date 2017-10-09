@@ -1,0 +1,8 @@
+{
+  "generator-bpkg": {
+    "promptValues": {
+      "githubUsername": "maxhallinan",
+      "website": "https://github.com/maxhallinan"
+    }
+  }
+}

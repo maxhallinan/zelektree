@@ -1,0 +1,8 @@
+.coveralls.yml
+coverage
+coverage.lcov
+dist
+es
+lib
+node_modules
+yarn.lock
