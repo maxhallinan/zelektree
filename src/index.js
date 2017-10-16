@@ -1,8 +1,3 @@
-'use strict';
-export default (str) => {
-  if (typeof str !== 'string') {
-    throw new TypeError(`Expected a string, got ${typeof str}`);
-  }
+import embedSelectors from './embed-selectors';
 
-  return str;
-};
+export { embedSelectors, };
