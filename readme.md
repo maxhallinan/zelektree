@@ -50,11 +50,22 @@ const mapStateToProps = (state) => ({ activeFoo: state.activeFoo, });
 Takes an object map of selectors and returns a Redux
 [StoreEnhancer](http://redux.js.org/docs/Glossary.html#store-enhancer).
 
+The store enhancer refreshes the selectors each time `getState` is called and
+the result is merged with the returned state.
+
+`embedSelectors` expects the top-level state value to be an object. To optimize
+performance, this expectation is not enforced with runtime checks.
+
 #### selectors
 
 Type: `Object`
 
-An object map of selectors.
+An object map of selectors. The key for each selector is used as the state tree
+key for that selector's output. A selector is called with a single argument, `state`.
+`state` is the current state of the store.
+
+`embedSelectors` is interoperable with any selector that is soley a reduction of
+state and not state and props, for example.
 
 
 ## License
