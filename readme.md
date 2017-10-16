@@ -4,10 +4,9 @@
 
 *Work in progress*
 
-Embed selectors in the Redux state tree.
+Embed selectors in the Redux state tree for convenience.
 
-
-
+Inspired by [Baobab](https://github.com/Yomguithereal/baobab#computed-data-or-monkey-business).
 
 ## Install
 
@@ -18,23 +17,40 @@ $ yarn install zelektree
 
 ## Usage
 
-```js
-import zelektree from 'zelektree';
+```javascript
+import { connect, createStore, } from 'redux';
+import { embedSelectors, } from 'zelektree';
+import $activeFoo from './selectors/active-foo';
+import reducer from './reducer';
 
-zelektree('foo');
-//=> 'foo'
+const store = createStore(
+  reducer,
+  // pass as the `enhancer` argument to `createStore`
+  embedSelectors({
+    // key each selector by intended state key name
+    activeFoo: $activeFoo,
+  }),
+);
+
+// ...
+
+// state and derived state are synced and merged
+const mapStateToProps = (state) => ({ activeFoo: state.activeFoo, });
 ```
 
 
 ## API
 
-### zelektree(input)
+### embedSelectors(selectors)
 
-#### input
+Takes an object map of selectors and returns a
+[Redux StoreEnhancer](http://redux.js.org/docs/Glossary.html#store-enhancer).
 
-Type: `string`
+#### selectors
 
-Lorem ipsum.
+Type: `Object`
+
+An object map of selectors.
 
 
 ## License
