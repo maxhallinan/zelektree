@@ -4,9 +4,13 @@
 
 *Work in progress*
 
-Embed selectors in the Redux state tree for convenience.
+Embed selectors in the Redux state tree.
+
+This is intended to be a convenient option for selectors that are used
+widely throughout an app.
 
 Inspired by [Baobab](https://github.com/Yomguithereal/baobab#computed-data-or-monkey-business).
+
 
 ## Install
 
@@ -43,8 +47,8 @@ const mapStateToProps = (state) => ({ activeFoo: state.activeFoo, });
 
 ### embedSelectors(selectors)
 
-Takes an object map of selectors and returns a
-[Redux StoreEnhancer](http://redux.js.org/docs/Glossary.html#store-enhancer).
+Takes an object map of selectors and returns a Redux
+[StoreEnhancer](http://redux.js.org/docs/Glossary.html#store-enhancer).
 
 #### selectors
 
