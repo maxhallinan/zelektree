@@ -7,6 +7,14 @@ const embedSelectors = (selectors) => {
       `\`selectors\` is type ${typeOf(selectors)} instead.`
     );
   }
+
+  return (next) => {
+    return (reducer, preloadedState) => {
+      const store = next(reducer, preloadedState);
+
+      return store;
+    };
+  };
 };
 
 export default embedSelectors;

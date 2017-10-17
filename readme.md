@@ -6,8 +6,8 @@
 
 Embed selectors in the Redux state tree.
 
-This is intended to be a convenient option for selectors that are used
-widely throughout an app.
+This is a convenient way for components to share selectors that are used widely
+throughout an app.
 
 Inspired by [Baobab](https://github.com/Yomguithereal/baobab#computed-data-or-monkey-business).
 
