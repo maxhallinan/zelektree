@@ -1,8 +1,6 @@
 # zelektree
 [![Build status](https://travis-ci.org/maxhallinan/zelektree.svg?branch=master)](https://travis-ci.org/maxhallinan/zelektree)
-[![Code coverage](https://codecov.io/gh/maxhallinan/zelektree/badge.svg?branch=master)](https://coveralls.io/repos/github/maxhallinan/zelektree/badge.svg?branch=master)
-
-*Work in progress*
+[![Coverage Status](https://coveralls.io/repos/github/maxhallinan/zuhlektion/badge.svg?branch=master)](https://coveralls.io/github/maxhallinan/zuhlektion?branch=master)
 
 Embed selectors in the Redux state tree.
 
