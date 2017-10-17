@@ -1,11 +1,12 @@
 {
  "name": "zelektree",
- "version": "0.0.0",
+ "version": "1.0.0",
  "description": "Embed selectors in the Redux state tree.",
  "license": "MIT",
  "repository": "maxhallinan/zelektree",
  "author": {
-  "name": "Max Hallinan", "email": "maxhallinan@riseup.net",
+  "name": "Max Hallinan",
+  "email": "maxhallinan@riseup.net",
   "url": "github.com/maxhallinan"
  },
  "engines": {
@@ -36,9 +37,9 @@
   "src"
  ],
  "keywords": [
-   "redux",
-   "selectors",
-   "state"
+  "redux",
+  "selectors",
+  "state"
  ],
  "dependencies": {},
  "devDependencies": {
@@ -91,7 +92,9 @@
   "rollup-watch": "^4.0.0"
  },
  "jest": {
-  "modulePathIgnorePatterns": ["__tests__/helpers/"],
+  "modulePathIgnorePatterns": [
+   "__tests__/helpers/"
+  ],
   "verbose": true
  }
 }
