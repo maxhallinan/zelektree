@@ -24,22 +24,22 @@ $ yarn install zelektree
 ```javascript
 import { connect, createStore, } from 'redux';
 import { embedSelectors, } from 'zelektree';
-import $activeFoo from './selectors/active-foo';
-import reducer from './reducer';
+
+const initialState = { foo: null, };
+
+const reducer = (state = initialState) => state;
 
 const store = createStore(
   reducer,
   // pass as the `enhancer` argument to `createStore`
   embedSelectors({
     // key each selector by intended state key name
-    activeFoo: $activeFoo,
+    isFoo: (state) => !!state.foo,
   }),
 );
 
-// ...
-
 // state and derived state are synced and merged
-const mapStateToProps = (state) => ({ activeFoo: state.activeFoo, });
+const state = store.getState(); // { foo: null, isFoo: false, }
 ```
 
 

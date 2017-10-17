@@ -5,8 +5,7 @@
  "license": "MIT",
  "repository": "maxhallinan/zelektree",
  "author": {
-  "name": "Max Hallinan",
-  "email": "maxhallinan@riseup.net",
+  "name": "Max Hallinan", "email": "maxhallinan@riseup.net",
   "url": "github.com/maxhallinan"
  },
  "engines": {
@@ -36,7 +35,11 @@
   "lib",
   "src"
  ],
- "keywords": [],
+ "keywords": [
+   "redux",
+   "selectors",
+   "state"
+ ],
  "dependencies": {},
  "devDependencies": {
   "babel": "^6.23.0",
@@ -78,6 +81,7 @@
   "jest-cli": "^21.0.2",
   "jest-enzyme": "^3.8.1",
   "redux": "^3.7.2",
+  "reselect": "^3.0.1",
   "rimraf": "^2.6.1",
   "rollup": "^0.43.0",
   "rollup-plugin-babel": "^2.7.1",
@@ -87,6 +91,7 @@
   "rollup-watch": "^4.0.0"
  },
  "jest": {
+  "modulePathIgnorePatterns": ["__tests__/helpers/"],
   "verbose": true
  }
 }
