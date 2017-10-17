@@ -68,6 +68,28 @@ describe(`zelektree > embedSelectors`, () => {
     expect(state).toEqual(expectedState);
   });
 
+  test(`Derived state values are keyed by selector key.`, () => {
+    const storeEnhancer = embedSelectors(selectors);
+    const store = createStore(reducer, storeEnhancer);
+    const state = store.getState();
+    const stateKeys = Object.keys(state);
+
+    expect(stateKeys).toHaveLength(6);
+
+    const expectedKeys = [
+      `foo`,
+      `bar`,
+      `isFoo`,
+      `isBar`,
+      `isFooAndBar`,
+      `isFooOrBar`,
+    ];
+
+    expectedKeys.forEach((key) => {
+      expect(state.hasOwnProperty(key)).toBeTruthy();
+    });
+  });
+
   test(`Selectors are refreshed by every store.getState call.`, () => {
     const storeEnhancer = embedSelectors(selectors);
     const store = createStore(reducer, storeEnhancer);
