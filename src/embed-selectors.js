@@ -1,4 +1,5 @@
-import { typeOf, } from './util';
+import { toPairs, typeOf, } from './util';
+import getDerivedState from './get-derived-state';
 
 const embedSelectors = (selectors) => {
   if (typeOf(selectors) !== `object`) {
@@ -8,11 +9,20 @@ const embedSelectors = (selectors) => {
     );
   }
 
+  const selectorPairs = toPairs(selectors);
+
   return (next) => {
     return (reducer, preloadedState) => {
       const store = next(reducer, preloadedState);
+      const state = store.getState();
 
-      return store;
+      return {
+        ...store,
+        getState: () => ({
+          ...state,
+          ...getDerivedState(selectorPairs, state),
+        }),
+      };
     };
   };
 };

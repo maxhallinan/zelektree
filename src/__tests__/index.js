@@ -74,6 +74,22 @@ describe(`zelektree > embedSelectors`, () => {
       expect(store.hasOwnProperty(key)).toBeTruthy();
     });
   });
+
+  test(`Merges store state and derived state.`, () => {
+    const storeEnhancer = embedSelectors(selectors);
+    const store = createStore(reducer, storeEnhancer);
+    const state = store.getState();
+    const expectedState = {
+      foo: true,
+      bar: false,
+      isFoo: true,
+      isBar: false,
+      isFooAndBar: false,
+      isFooOrBar: true,
+    };
+
+    expect(state).toEqual(expectedState);
+  });
 });
 
 describe(`zelektree > getDerivedState`, () => {
