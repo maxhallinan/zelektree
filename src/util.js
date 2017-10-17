@@ -1,3 +1,8 @@
+export const toPairs = (props) =>
+  Object
+    .keys(props)
+    .map((key) => [ key, props[key], ]);
+
 export const typeOf = (x)  =>
   ({}).toString
     .call(x)
