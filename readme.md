@@ -57,7 +57,7 @@ performance, this expectation is not enforced with runtime checks.
 
 #### selectors
 
-Type: `{ [String]: (State) -> State }`
+Type: `{ [String]: (Object) -> * }`
 
 An object map of selectors. The key for each selector is used as the state tree
 key for that selector's output. A selector is called with a single argument, `state`.
