@@ -2,7 +2,8 @@
 [![Build status](https://travis-ci.org/maxhallinan/zelektree.svg?branch=master)](https://travis-ci.org/maxhallinan/zelektree)
 [![Coverage Status](https://coveralls.io/repos/github/maxhallinan/zuhlektion/badge.svg?branch=master)](https://coveralls.io/github/maxhallinan/zuhlektion?branch=master)
 
-Embed selectors in a Redux state tree.
+Embed [selectors](https://stackoverflow.com/questions/38674200/what-are-selectors-in-redux)
+in a Redux state tree.
 
 This is a convenient way for components to share selectors that are used widely
 throughout an app.
@@ -56,7 +57,7 @@ performance, this expectation is not enforced with runtime checks.
 
 #### selectors
 
-Type: `Object`
+Type: `{ [String]: (State) -> State }`
 
 An object map of selectors. The key for each selector is used as the state tree
 key for that selector's output. A selector is called with a single argument, `state`.
