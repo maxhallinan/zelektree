@@ -1,6 +1,6 @@
 {
  "name": "zelektree",
- "version": "1.0.1",
+ "version": "1.0.2",
  "description": "Embed selectors in a Redux state tree.",
  "license": "MIT",
  "repository": "maxhallinan/zelektree",
